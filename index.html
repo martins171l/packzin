@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pack da Anazinha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pack da Anazinha 🔥</h1>
+    <p class="price">Apenas R$13,99</p>
+    <img src="https://via.placeholder.com/500x300?text=Pack+da+Anazinha" alt="Pack da Anazinha">
+    <button onclick="document.getElementById('payment').scrollIntoView({ behavior: 'smooth' });">
+      Comprar Agora
+    </button>
+  </header>
+
+  <section id="payment">
+    <h2>Pagamento</h2>
+    <form onsubmit="return confirmPayment(event)">
+      <input type="text" placeholder="Nome no cartão" required>
+      <input type="text" placeholder="Número do cartão" maxlength="19" required>
+      <input type="text" placeholder="Validade (MM/AA)" required>
+      <input type="text" placeholder="CVV" maxlength="4" required>
+      <button type="submit">Pagar R$13,99</button>
+    </form>
+    <p id="confirmMsg"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pack da Anazinha. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function confirmPayment(event) {
+      event.preventDefault();
+      document.getElementById("confirmMsg").textContent = "✅ Pagamento confirmado com sucesso!";
+      return false;
+    }
+  </script>
+</body>
+</html>
